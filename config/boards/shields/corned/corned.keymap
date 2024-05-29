@@ -42,7 +42,7 @@
    &rgb_ug RGB_BRI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG         &rgb_ug RGB_SPD   &kp N7   &kp N8 &kp N9  &rgb_ug RGB_BRD &trans
    &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12                                         &rgb_ug RGB_EFF  &kp N4 &kp N5 &kp N6 &kp DOT &trans
    &kp F1  &kp F2 &kp F3 &kp F4 &kp F5 &kp F6                                           &kp N0 &kp N1 &kp N2  &kp N3 &kp COMMA &trans
-                     &trans  &kp SPACE  &trans      &trans  &kp SPACE   &trans
+                     &trans  &mo 3  &trans      &trans  &mo 3   &trans
                         >;
                 };
 
@@ -56,7 +56,7 @@
    &kp GRAVE &kp EQUAL &kp RS(N1) &kp RA(LBKT) &kp RA(RBKT) &kp RS(RBKT)                           &kp RA(N6) &kp RA(N1)  &kp RS(N5)  &kp RA(GRAVE)  &kp RS(N7) &kp RA(N4)
    &kp RS(GRAVE) &kp RS(EQUAL)   &kp RS(MINUS) &kp RA(SQT)   &kp RA(NUHS)  &kp RS(N0)          &kp RS(LBKT) &kp MINUS  &kp RS(N2)  &kp LBKT &kp SQT &kp RS(SQT)
    &kp RS(N3) &kp NUBS  &kp RS(NUBS) &kp RS(N8)   &kp RS(N9)   &kp RBKT                       &kp RA(E) &kp RA(N3)  &kp RS(N6)   &kp RS(N4) &kp RA(N2) &kp TILDE
-                             		        &kp SPACE  &trans   &trans                      &trans   &trans    &kp SPACE
+                             		        &mo 3  &trans   &trans                      &trans   &trans    &mo 3
                         >;
                 };
 
