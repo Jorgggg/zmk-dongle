@@ -1,13 +1,13 @@
 file_format: "1"
-id: enki42
-name: The enki42 
+id: corned 
+name: The Corne Dongled 
 type: shield
-url: https://github.com/benvallack/zmk-config-enki42
+url: https://github.com/jorgggg/zmk-dongle
 requires: [pro_micro]
 exposes: [i2c_oled]
 features:
   - keys
 siblings:
-  - enki42_left
-  - enki42_right
-  - enki42_dongle
+  - corned_left
+  - corned_right
+  - corned_dongle
