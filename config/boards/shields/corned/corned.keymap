@@ -1,0 +1,77 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
+
+#include <dt-bindings/zmk/ext_power.h>
+
+&led_strip{
+	chain-length = <27>;
+};
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// |CL CPS|  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CL NTR|
+// | SHFT |GUI Z|ALT X|  C  |  V  |  B  |   |  N  |  M   |  ,  |RLT .|WIN -| SHFT |
+//                    |HME L|ESC L| BSPC|   | SPC | DEL L|END L|
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &mt LCTRL CAPS &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL ENTER 
+   &kp LSHFT &mt LGUI Z &mt LALT X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &mt RALT DOT &mt LGUI FSLH &kp RSHFT
+             &lt 1 HOME &lt 2 ESC &kp BSPC   &kp SPACE &lt 2 DEL &lt 1 END
+                        >;
+                };
+                number_layer {
+// -----------------------------------------------------------------------------------------
+// | RGB? | RGB?| RGB?| RGB?|RGB? |RGB? |   | RGB?|  7  |  8  |  9  | RGB?| TRNS |
+// | F7   | F8  | F9  | F10 | F11 | F12 |   | NUM |  4  |  5  |  6  | DOT | TRNS |
+// | F1   | F2  | F3  | F4  | F5  | F6  |   |  0  |  1  |  2  |  3  |COMMA| TRNS |
+//                    | TRNS|MO(3)| TRNS|   | TRNS|MO(3)| TRNS|
+                        bindings = <
+   &rgb_ug RGB_BRI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG         &rgb_ug RGB_SPD   &kp N7   &kp N8 &kp N9  &rgb_ug RGB_BRD &trans
+   &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12                                         &rgb_ug RGB_EFF  &kp N4 &kp N5 &kp N6 &kp DOT &trans
+   &kp F1  &kp F2 &kp F3 &kp F4 &kp F5 &kp F6                                           &kp N0 &kp N1 &kp N2  &kp N3 &kp COMMA &trans
+                     &trans  &kp SPACE  &trans      &trans  &kp SPACE   &trans
+                        >;
+                };
+
+                symbol_layer {
+// -----------------------------------------------------------------------------------------
+// |  º	  |  ¡  |  !  |  [  |  ]  |  *  |   |  ¬  |  |  |  %  |  \  |  /  |  ~   |
+// |  ª   |  ¿  |  ?  |  {  |  }  |  =  |   |  ^  |  '  |  "  |  `  |  ´  |  ¨   |
+// |  ·   |  <  |  >  |  (  |  )  |  +  |   |  €  |  #  |  &  |  $  |  @  |  bt? |
+//                    |MO(3)| TRNS| TRNS|   | TRNS| TRNS|MO(3)|
+                        bindings = <
+   &kp GRAVE &kp EQUAL &kp RS(N1) &kp RA(LBKT) &kp RA(RBKT) &kp RS(RBKT)                           &kp RA(N6) &kp RA(N1)  &kp RS(N5)  &kp RA(GRAVE)  &kp RS(N7) &kp RA(N4)
+   &kp RS(GRAVE) &kp RS(EQUAL)   &kp RS(MINUS) &kp RA(SQT)   &kp RA(NUHS)  &kp RS(N0)          &kp RS(LBKT) &kp MINUS  &kp RS(N2)  &kp LBKT &kp SQT &kp RS(SQT)
+   &kp RS(N3) &kp NUBS  &kp RS(NUBS) &kp RS(N8)   &kp RS(N9)   &kp RBKT                       &kp RA(E) &kp RA(N3)  &kp RS(N6)   &kp RS(N4) &kp RA(N2) &kp TILDE
+                             		        &kp SPACE  &trans   &trans                      &trans   &trans    &kp SPACE
+                        >;
+                };
+
+                nav_layer {
+// -----------------------------------------------------------------------------------------
+// |   	  |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   |  L  |  D  |  U  |  R  |     |      |
+// |      |     |     |     |     |     |   |HOME |PGDN |PGUP | END | INS |      |
+//                    |-----|-----|-----|   |-----|-----|-----|
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans         &trans &trans &trans &trans &trans &trans   
+   &trans &trans &trans &trans &trans &trans         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &trans &trans &trans &trans &trans &trans         &kp HOME &kp PG_DN  &kp PG_UP  &kp END &kp INS &trans
+                  &kp HOME &kp ESC &kp BSPC          &kp SPACE &kp DEL &kp END
+                        >;
+                };
+        };
+};
