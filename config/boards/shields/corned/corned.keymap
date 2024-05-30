@@ -11,9 +11,20 @@
 
 #include <dt-bindings/zmk/ext_power.h>
 
+//TODO: mt all but zx.-
+
 &led_strip{
 	chain-length = <27>;
 };
+
+//&mt {
+//	tapping-term-ms = <200>;
+//}
+
+&lt {
+	tapping-term-ms = <100>;
+	flavor = "hold-preferred";
+}
 
 / {
         keymap {
