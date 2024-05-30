@@ -19,12 +19,12 @@
 
 //&mt {
 //	tapping-term-ms = <200>;
-//}
+//};
 
 &lt {
 	tapping-term-ms = <100>;
 	flavor = "hold-preferred";
-}
+};
 
 / {
         keymap {
