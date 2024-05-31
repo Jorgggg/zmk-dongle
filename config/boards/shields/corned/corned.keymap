@@ -25,7 +25,7 @@
 
 / {
 	behaviors {
-		&tp_mt: tap-preferred-mod-tap {
+		tp_mt: tap-preferred-mod-tap {
 			compatible = "zmk,behavior-hold-tap"
 			flavor = "tap-preferred"
 			tapping-term-ms = <200>;
