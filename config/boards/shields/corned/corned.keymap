@@ -11,20 +11,54 @@
 
 #include <dt-bindings/zmk/ext_power.h>
 
-//TODO: mt all but zx.-
+//librerias efecto led personalizado¿?
+#include <zmk/led_indicators.h>
 
+//número de leds
 &led_strip{
 	chain-length = <27>;
 };
 
-//&mt {
-//	tapping-term-ms = <200>;
-//};
+//hold-tap, preferencia tap para zx.-
+&mt LGUI Z{
+	flavor = "tap-preferred";
+};
 
+&mt LALT X{
+	flavor = "tap-preferred";
+};
+
+&mt LGUI FSLH{
+	flavor = "tap-preferred";
+};
+
+&mt RALT DOT{
+	flavor = "tap-preferred";
+};
+
+//layer-tap, preferencia hold
 &lt {
 	tapping-term-ms = <100>;
 	flavor = "hold-preferred";
 };
+
+//-----------------------------------------
+static void underglow_effect(uint32_t position, uint8_t r, uint8_t g, uint8_t b) {
+    // Configura tu efecto personalizado aquí
+    // Este es un ejemplo simple para un efecto de respiración
+    static uint8_t brightness = 0;
+    static int8_t direction = 1;
+
+    brightness += direction;
+    if (brightness == 0 || brightness == 255) {
+        direction = -direction;
+    }
+
+    zmk_rgb_underglow_set_hsv(r, g, b, brightness);
+}
+
+ZMK_KEYMAP_EXTERNS(underglow_effect);
+//-----
 
 / {
         keymap {
