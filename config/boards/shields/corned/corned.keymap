@@ -17,49 +17,22 @@
 	chain-length = <27>;
 };
 
-//hold-tap, preferencia tap para zx.-
-
-&mt LGUI Z{
-	flavor = "tap-preferred";
-};
-
-&mt LALT X{
-	flavor = "tap-preferred";
-};
-
-&mt LGUI FSLH{
-	flavor = "tap-preferred";
-};
-
-&mt RALT DOT{
-	flavor = "tap-preferred";
-};
-
 //layer-tap, preferencia hold
 &lt {
 	tapping-term-ms = <100>;
 	flavor = "hold-preferred";
 };
 
-//-----------------------------------------
-//static void underglow_effect(uint32_t position, uint8_t r, uint8_t g, uint8_t b) {
-//    // Configura tu efecto personalizado aquí
-//    // Este es un ejemplo simple para un efecto de respiración
-//    static uint8_t brightness = 0;
-//    static int8_t direction = 1;
-//
-//    brightness += direction;
-//    if (brightness == 0 || brightness == 255) {
-//        direction = -direction;
-//    }
-//
-//    zmk_rgb_underglow_set_hsv(r, g, b, brightness);
-//}
-
-//ZMK_KEYMAP_EXTERNS(underglow_effect);
-//-----
-
 / {
+	behaviors {
+		&tp_mt: tap-preferred-mod-tap {
+			compatible = "zmk,behavior-hold-tap"
+			flavor = "tap-preferred"
+			tapping-term-ms = <200>;
+			bindings = <&kp>, <&kp>;
+		};
+	};
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -72,7 +45,7 @@
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &mt LCTRL CAPS &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL ENTER 
-   &kp LSHFT &mt LGUI Z &mt LALT X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &mt RALT DOT &mt LGUI FSLH &kp RSHFT
+   &kp LSHFT &tp_mt LGUI Z &tp_mt LALT X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &tp_mt RALT DOT &tp_mt LGUI FSLH &kp RSHFT
              &lt 1 HOME &lt 2 ESC &kp BSPC   &kp SPACE &lt 2 DEL &lt 1 END
                         >;
                 };
