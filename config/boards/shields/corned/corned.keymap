@@ -11,8 +11,6 @@
 
 #include <dt-bindings/zmk/ext_power.h>
 
-//librerias efecto led personalizado¿?
-#include <zmk/led_indicators.h>
 
 //número de leds
 &led_strip{
