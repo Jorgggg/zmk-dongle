@@ -88,7 +88,21 @@
    &trans &trans &trans &trans &trans &trans         &trans &trans &trans &trans &trans &trans   
    &trans &trans &trans &trans &trans &trans         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &trans &trans &trans &trans &trans &trans         &kp HOME &kp PG_DN  &kp PG_UP  &kp END &kp INS &trans
-                  &kp HOME &kp ESC &kp BSPC          &kp SPACE &kp DEL &kp END
+                  &kp HOME &kp ESC &kp BSPC          &tog 4 &kp DEL &kp END
+                        >;
+                };
+
+                game_layer {
+// -----------------------------------------------------------------------------------------
+// |   	  |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   |  L  |  D  |  U  |  R  |     |      |
+// |      |     |     |     |     |     |   |HOME |PGDN |PGUP | END | INS |      |
+//                    |-----|-----|-----|   |-----|-----|-----|
+                        bindings = <
+   &kp TAB &kp Q &kp W &kp E &kp R &kp T                &kp N3 &kp N2 &kp N1 &kp ESC &kp DEL &kp N6   
+   &mt LCTRL CAPS &kp A &kp S &kp D &kp F &kp G         &kp O &kp N4 &kp N5 &kp L &kp N7 &trans
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B              &kp HOME &kp PG_DN  &kp PG_UP  &kp END &kp INS &trans
+                  &kp UP &kp DOWN &kp SPACE             &tog 4 &none &none
                         >;
                 };
         };
