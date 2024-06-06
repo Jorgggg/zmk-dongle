@@ -14,14 +14,14 @@ config ZMK_USB
 
 endif
 
-if ZMK_DISPLAY
-
-config I2C
-	default y
-config SSD1306
-	default y
-endif 
-
+#if ZMK_DISPLAY
+#
+#config I2C
+#	default y
+#config SSD1306
+#	default y
+#endif 
+#
 if SHIELD_CORNED_LEFT || SHIELD_CORNED_RIGHT || SHIELD_CORNED_DONGLE 
 
 config ZMK_SPLIT
