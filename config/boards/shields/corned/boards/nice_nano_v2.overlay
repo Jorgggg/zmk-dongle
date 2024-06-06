@@ -43,7 +43,7 @@
 
 / {
     chosen {
-	zephyr,display = $oled;
+	zephyr,display = &oled;
         zmk,underglow = &led_strip;
     };
 };
